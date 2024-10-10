@@ -5,6 +5,7 @@ import java.io.*;
 import java.util.*;
 
 class GFG {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -31,15 +32,17 @@ class Solution {
     int missingNumber(int n, int arr[]) {
 
         // Your Code Here
-        int xor1 =0;
-        int xor2 =0;
+        int sum = n*(n+1)/2;
         
-        for (int i =0; i<=n ; i++){
-            xor1 = xor1^i;
+        int s2=0;
+        for(int i =0; i<n-1;i++){
+            s2 += arr[i];
+            
         }
-        for (int i=0; i<n-1; i++){
-            xor2 = xor2^arr[i];
-        }
-        return(xor1^xor2);
+        int missingno =sum -s2;
+        
+        return missingno;
+        
+        
     }
 }
